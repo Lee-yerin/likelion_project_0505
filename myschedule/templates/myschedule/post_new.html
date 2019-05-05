@@ -1,0 +1,10 @@
+{% extends "myschedule/base.html" %}
+
+{% block content %}
+    <h1>새 스케줄을 작성하세요.</h1>
+    <form method = "POST">
+        {% csrf_token %}
+        {{ form.as_p}}
+        <button type="submit">스케줄 등록하기</button>
+    </form>
+{% endblock %}

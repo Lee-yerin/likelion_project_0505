@@ -1,0 +1,14 @@
+{% extends "myschedule/base.html" %}
+
+{% block content %}
+
+        <div>
+            <h2>{{post.schedule_date}}</h2>
+            <p>{{post.title}}</p>
+            <p>{{post.memo}}</p>
+           
+            <a href = "{% url 'edit' post.id %}">스케줄 수정하기</a>
+            <a href = "{% url 'delete' post.id %}">스케줄 삭제하기</a>
+        </div>
+
+    {% endblock %}
