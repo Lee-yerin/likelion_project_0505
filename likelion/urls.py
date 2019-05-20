@@ -15,9 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-import myschedule
+import myschedule,accounts
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('myschedule/',include('myschedule.urls')),
+    path('accounts/', include('django.contrib.auth.urls')),
+    path('accounts/', include('accounts.urls')),
 ]

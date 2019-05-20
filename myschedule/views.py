@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from .models import Schedule
 from django.utils import timezone
 from .forms import PostForm
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 
@@ -13,6 +14,7 @@ def detail(request, post_id):
     post_detail = get_object_or_404(Schedule, pk=post_id)
     return render(request, 'myschedule/detail.html',{'post' : post_detail})
 
+@login_required
 def post_new(request):
     if request.method == "POST":
         form = PostForm(request.POST)

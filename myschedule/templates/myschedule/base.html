@@ -7,9 +7,14 @@
     <h1><strong>예린이의 스케줄</strong></h1>
     <img src={% static 'image/today.jpg'%} height ="300px" alt="">
     <div>
+        <a href="{% url 'accounts:signup' %}">회원가입</a>
+        <a href="{% url 'login' %}">LOGIN</a>
+        <a href="{% url 'logout' %}">LOGOUT</a>
         <a href = "{% url 'new' %}">새 스케줄 작성하기</a>
         <a href = "{% url 'home' %}">홈으로 돌아가기</a>
+        
     </div>
+
     {% block content%}
     {% endblock %}
 </body>
